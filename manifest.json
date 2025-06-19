@@ -13,9 +13,6 @@
       "js": ["content.js"]
     }
   ],
-  "action": {
-    "default_title": "Enable HD Images"
-  },
   "declarative_net_request": {
     "rule_resources": [
       {

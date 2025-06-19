@@ -20,6 +20,16 @@ Google Images Enhancer is a Chromium extension that automatically replaces Insta
 1. Go to [Google Search](https://www.google.com/) and perform a search that includes Instagram post thumbnails.
 2. Whenever an Instagram thumbnail appears in image results, it will be upgraded to the full-resolution image automatically.
 
+## Compatibility
+
+- Tested on the latest Arc browser (v137). Should work fine on Google Chrome and other Chromium-based browsers.
+- Currently supports Instagram images only. Future updates may include support for other image sources.
+- Limitations:
+  - May not work with Instagram Reels or other non-image content such as videos and stories.
+  - Search results that link to Instagram profiles or other non-post pages are not supported, as the extension cannot resolve the associated HD image.
+  - For posts containing multiple images, only the first image will be retrieved. This may not match the thumbnail shown in the search result. There is currently no reliable way to determine which image corresponds to the preview.
+  - In rare cases, Instagram may throttle requests or return fallback pages. These are detected and excluded to avoid broken or incorrect thumbnails.
+
 ## Development
 
 To install developer dependencies and run type checks:
@@ -31,17 +41,7 @@ pnpm tsc --noEmit
 
 Modify `content.js`, `background.js`, or `ruleset.json` as needed and reload the extension in `chrome://extensions` to see your changes.
 
-## Compatibility
-
-- Tested on the latest Arc browser (v137). Should work fine on Google Chrome and other Chromium-based browsers.
-- Currently supports Instagram images only. Future updates may include support for other image sources.
-- Limitations:
-  - May not work with Instagram Reels or other non-image content such as videos and stories.
-  - Search results that link to Instagram profiles or other non-post pages are not supported, as the extension cannot resolve the associated HD image.
-  - For posts containing multiple images, only the first image will be retrieved. This may not match the thumbnail shown in the search result. There is currently no reliable way to determine which image corresponds to the preview.
-  - In rare cases, Instagram may throttle requests or return fallback pages. These are detected and excluded to avoid broken or incorrect thumbnails.
-
-## File Structure
+### File Structure
 
 ```
 ├── background.js        # Service worker fetching HD images and converting to data URIs

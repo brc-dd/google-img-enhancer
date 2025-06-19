@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["esnext", "dom"],
+    "outDir": "dist",
+    "strict": true,
+    "types": ["typed-query-selector", "@types/chrome"]
+  }
+}

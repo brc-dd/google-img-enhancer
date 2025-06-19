@@ -1,5 +1,7 @@
 // @ts-check
 
+const igPicRE = /^https:\/\/www\.instagram\.com\/p\/[a-zA-Z0-9_-]+\/?$/
+
 function upgradeInstagramImages() {
   const images = document.querySelectorAll(
     'a[href^="https://www.instagram.com/"] img:not([src*=favicon]):not([src^="data:"])'
@@ -7,7 +9,7 @@ function upgradeInstagramImages() {
 
   images.forEach((img) => {
     const postUrl = img.closest('a')?.href
-    if (!postUrl) return
+    if (!postUrl || !igPicRE.test(postUrl)) return
 
     const hdUrl = new URL('./media/?size=l', postUrl).href
 

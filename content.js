@@ -2,10 +2,17 @@
 
 /** @param {string} url */
 function getShortcode(url) {
-  const u = new URL(url)
-  if (!/(?:^|\.)instagram\.com$/.test(u.hostname)) return null
-  const match = u.pathname.match(/\/p\/([a-zA-Z0-9_-]+)\/?/)
-  return match ? match[1] : null
+  try {
+    const u = new URL(url)
+    if (!/(?:^|\.)instagram\.com$/.test(u.hostname)) return null
+    const match = u.pathname.match(/\/(?:p|reel)\/([^\/]+)/)
+    // we can also match /tv/ for IGTV posts, but
+    // 1) they always differ from the image shown in google search results
+    // 2) their media dimensions are different, and look worse in results
+    return match ? match[1] : null
+  } catch {
+    return null
+  }
 }
 
 function upgradeInstagramImages() {

@@ -22,8 +22,8 @@ Google Images Enhancer is a Chromium extension that automatically replaces Insta
 
 ## Compatibility
 
-- Tested on the latest Arc browser (v137). Should work fine on Google Chrome and other Chromium-based browsers.
-- Currently supports Instagram images only. Future updates may include support for other image sources.
+- Tested on Arc browser (v137+). Should work fine on Google Chrome and other Chromium-based browsers.
+- Currently supports Instagram results only. Future updates may include support for other sources.
 - Limitations:
   - IGTV and stories are not supported.
   - Search results that link to Instagram profiles or other non-post pages are not supported, as the extension cannot resolve the associated HD image.

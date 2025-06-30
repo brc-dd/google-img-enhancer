@@ -56,6 +56,6 @@ Modify `content.js`, `background.js`, or `ruleset.json` as needed and reload the
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/brc-dd/static/sponsors.svg">
-    <img alt="Sponsors" src="https://cdn.jsdelivr.net/gh/brc-dd/static/sponsors.svg"/>
+    <img alt="brc-dd's sponsors" src="https://cdn.jsdelivr.net/gh/brc-dd/static/sponsors.svg" />
   </a>
 </p>
